@@ -1,8 +1,11 @@
 
 import { gql, useQuery } from "@apollo/client";
-import { Page, Layout, Banner, Card } from "@shopify/polaris";
+import { Page, Layout, Banner, Card,Icon, Link } from "@shopify/polaris";
 import { Loading } from "@shopify/app-bridge-react";
 import { ProductsPage } from "./ProductsPage";
+import {
+  MobileBackArrowMajor
+} from '@shopify/polaris-icons';
 
 const GET_PRODUCTS_BY_ID = gql`
    query{
@@ -10,23 +13,6 @@ const GET_PRODUCTS_BY_ID = gql`
         edges{
           node{
             id
-            title
-            images (first: 1) {
-              edges{
-                node{
-                  id
-                  originalSrc
-                }
-              }
-            }
-            variants (first :1){
-              edges{
-                node{
-                  id
-                  price
-                }
-              }
-            }
           }
         }
      }
@@ -64,7 +50,8 @@ export function TestApi() {
 
   return (
     <>
-    <Page>
+    {/* <Link url="/">{<Icon source={MobileBackArrowMajor} color="base"/>}</Link> */}
+    <Page fullWidth  sectioned title=''>
       <Layout>
         <Layout.Section> 
             <ProductsPage new_arr={new_arr} />

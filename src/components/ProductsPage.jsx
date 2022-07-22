@@ -1,8 +1,9 @@
 import { gql, useQuery } from "@apollo/client";
-import { Page, Layout, Banner, Card } from "@shopify/polaris";
+import { Page, Layout, Banner, Card, Button, Icon } from "@shopify/polaris";
 import { Loading } from "@shopify/app-bridge-react";
-import { ProductsList } from "./ProductsList";
+import { ProductsList } from "./ProductsList"
 import HeaderNav from "./HeaderNav";
+
 
 // const GET_PRODUCTS_BY_ID = gql`
 //    query{
@@ -57,6 +58,8 @@ const GET_PRODUCTS_BY_ID = gql`
             node {
               price
               id
+              compareAtPrice
+              sku
             }
           }
         }
@@ -87,16 +90,14 @@ export function ProductsPage(new_arr) {
     );
   }
 
+
+  
+
+
   return (
-    <Page>
-      <HeaderNav />
-      <Layout>
-        <Layout.Section>
-          <Card>  
-            <ProductsList data={data} />
-          </Card>
-        </Layout.Section>
-      </Layout>
-    </Page>
+    <>
+      {/* <HeaderNav /> */}
+      <ProductsList data={data} />
+    </>
   );
 }

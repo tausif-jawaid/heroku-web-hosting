@@ -23,6 +23,10 @@ import Continent from "./components/Continent";
 import AddProducts from "./components/AddProducts";
 import { ProductsPage } from "./components/ProductsPage";
 import { TestApi } from "./components/TestApi";
+import HeaderNav from "./components/HeaderNav";
+import ReadExcel from "./components/ReadExcel";
+import BulkUpload from "./components/BulkUpload";
+import Import from "./components/Import";
 
 export default function App() {
   //console.log("repeat")
@@ -36,14 +40,20 @@ export default function App() {
         }}
       >
          <MyProvider>
-       <BrowserRouter>
+       {/* <BrowserRouter>
           <Routes>
               <Route path="/" element={<TestApi />}/>
               <Route path="/addproducts" element={<AddProducts />}/>
           </Routes>
-       </BrowserRouter>
+       </BrowserRouter> */}
        
-          {/* <HomePage /> */}
+          {/* <ReadExcel /> */}
+          <HomePage />
+         
+          {/* <Import /> */}
+
+
+
           {/* <NavBar /> */}
           {/* <Niya /> */}
           {/* <ApiTest /> */}
